@@ -1,0 +1,620 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="hero-background">
+            <video class="hero-image" autoplay loop muted playsinline>
+                <source src="{{ url_for('static', filename='videos/main video.mp4') }}" type="video/mp4" />
+                Your browser does not support the video tag.
+                            <div class="video-container" style="position:relative;">
+                <video src="your-video.mp4" autoplay muted loop style="width:100%;"></video>
+                <div class="gradient-overlay"></div>
+                <div class="hero-content">
+                    <!-- Your existing text and buttons here -->
+                </div>
+            </div>
+            </video>
+          
+            
+        <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="container hero-content">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-lg-8 col-xl-7">
+                <div class="hero-logo mb-4 animate-fade-in">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Dream Kraft Interiors" class="hero-logo-img">
+                </div>
+                <h1 class="hero-title mb-4 animate-fade-in-delay">
+                    Create Your <span class="text-white">Dream Space</span> with Professional Interior Design
+                </h1>
+                <p class="hero-subtitle mb-5 animate-fade-in-delay">
+                    Create stunning interiors that reflect your style with our expert design team. From concept to completion, we bring your vision to life.
+                </p>
+                <div class="hero-cta animate-fade-in-delay-2">
+                    <a href="#contact" class="btn btn-primary btn-lg me-3 btn-consultation">
+                        <i class="fas fa-calendar-alt me-2"></i>Book Free Consultation
+                    </a>
+                    <a href="#portfolio" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-eye me-2"></i>View Portfolio
+                    </a>
+                </div>
+                
+                <!-- Quick Stats -->
+                <div class="hero-stats mt-5 animate-fade-in-delay-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="stat-item">
+                                <h3 class="stat-number">500+</h3>
+                                <p class="stat-label">Projects Completed</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-item">
+                                <h3 class="stat-number">50+</h3>
+                                <p class="stat-label">Expert Designers</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-item">
+                                <h3 class="stat-number">98%</h3>
+                                <p class="stat-label">Client Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="https://pixabay.com/get/ge36eeb2b1bdb3c578cd7c1680cd21e66ce68b1e6eb7adc6e89411f0f19a1d4375525ecda6ef6ecc4af06a4216b8b20ff4144bae9d89c80cbf3298f5d553f81d0_1280.jpg" alt="About Design Kraft" class="img-fluid rounded-3 shadow">
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <div class="about-content">
+                    <h2 class="section-title mb-4">About Dream Kraft Interiors</h2>
+                    <p class="lead mb-4">
+                        We are passionate about creating spaces that inspire and reflect your unique personality. With years of experience in interior design, our team combines creativity with functionality to deliver exceptional results.
+                    </p>
+                    <p class="mb-4">
+                        Our mission is to transform ordinary spaces into extraordinary environments that enhance your lifestyle. We believe that great design should be accessible to everyone, which is why we offer personalized solutions tailored to your budget and preferences.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-award text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Award-Winning Designs</h6>
+                                <p class="mb-0 text-muted">Recognized excellence in interior design</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-users text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Expert Team</h6>
+                                <p class="mb-0 text-muted">Skilled designers and project managers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item d-flex align-items-center">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-clock text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Timely Delivery</h6>
+                                <p class="mb-0 text-muted">Projects completed on schedule</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">Our Services</h2>
+            <p class="section-subtitle">Comprehensive interior design solutions for every space</p>
+        </div>
+        
+        <div class="row">
+            <!-- Home Interior Design -->
+            <div class="col-lg-4 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-image">
+                        <img src="https://pixabay.com/get/ga70217a19ee304a65b5ea8806c8f252692b7d419693e76814ef291ed13c3698bed07d7c0442b0eb59a5ddc221a0b87bb9b0c6e6d48ba349153bb2df1b015fc07_1280.jpg" alt="Home Interior Design" class="img-fluid">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title">Home Interior Design</h4>
+                        <p class="service-description">
+                            Transform your living spaces with our comprehensive home interior design services. From living rooms to bedrooms, we create beautiful and functional spaces that reflect your lifestyle.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check text-primary me-2"></i>Living Room Design</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Bedroom Design</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Kitchen Design</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Bathroom Design</li>
+                        </ul>
+                        <div class="service-pricing">
+                            <span class="price-from">Starting from</span>
+                            <span class="price-amount">₹2,50,000</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary service-cta">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Office Space Design -->
+            <div class="col-lg-4 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-image">
+                        <img src="https://pixabay.com/get/g5dca18acc482a3f065a6e504e18e61b68500832d7732f227d33ab90a90da59405f334a3f3e466e1da856a7b1e32de1910feacdebd2aef94db3a50a730567cf05_1280.jpg" alt="Office Space Design" class="img-fluid">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title">Office Space Design</h4>
+                        <p class="service-description">
+                            Create productive and inspiring work environments with our office interior design solutions. We design spaces that enhance productivity and reflect your company culture.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check text-primary me-2"></i>Open Office Layout</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Meeting Rooms</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Reception Areas</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Break Rooms</li>
+                        </ul>
+                        <div class="service-pricing">
+                            <span class="price-from">Starting from</span>
+                            <span class="price-amount">₹5,00,000</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary service-cta">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Furniture Design -->
+            <div class="col-lg-4 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-image">
+                        <img src="https://pixabay.com/get/g8c78663110e884c8fca2246534648d4d09451f8dd126b58128fea847c302f72bb9ae0826bb091e8f8d09ed48a8e1973ce91b2529c4fc56cb442d41c40394caeb_1280.jpg" alt="Custom Furniture Design" class="img-fluid">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-couch"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title">Custom Furniture Design</h4>
+                        <p class="service-description">
+                            Get bespoke furniture pieces designed specifically for your space and needs. Our custom furniture combines style, functionality, and quality craftsmanship.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check text-primary me-2"></i>Built-in Wardrobes</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Kitchen Cabinets</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Study Tables</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Storage Solutions</li>
+                        </ul>
+                        <div class="service-pricing">
+                            <span class="price-from">Starting from</span>
+                            <span class="price-amount">₹1,50,000</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary service-cta">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">Our Portfolio</h2>
+            <p class="section-subtitle">Explore our latest interior design projects</p>
+        </div>
+        
+        <!-- Portfolio Filter -->
+        <div class="portfolio-filter text-center mb-4">
+            <button class="btn btn-outline-primary active" data-filter="all">All Projects</button>
+            <button class="btn btn-outline-primary" data-filter="living">Living Room</button>
+            <button class="btn btn-outline-primary" data-filter="kitchen">Kitchen</button>
+            <button class="btn btn-outline-primary" data-filter="office">Office</button>
+        </div>
+        
+        <div class="row portfolio-grid">
+            <!-- Portfolio Item 1 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://pixabay.com/get/g2e5a927f5ab47c2b93974c7bda4a13632c81d99f6b69a0712df77a04574fa4ba73a6d082419d6313614741f5e0376ae44d34c325235610858c4853c8d4cb4769_1280.jpg" alt="Modern Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Modern Living Room</h5>
+                                <p>Contemporary design with clean lines</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 2 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://pixabay.com/get/ge487044c971cd5640806e743a4aab991f926e5c1ff1e287fd6938dfe163f4222606f2ac7b6a8d05eafed576a86728e2c5b7e5c30a3b19634ebe326e6103c34d9_1280.jpg" alt="Contemporary Kitchen" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Contemporary Kitchen</h5>
+                                <p>Sleek and functional kitchen design</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 3 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="office">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://pixabay.com/get/g0f597dea907da42eee329d27f0c6fe5b3a206c912d20ab431430600307716407c5fe9821ad248650379dd3ef2534b8d193c480f2b52099bcb1273b8f5164b97a_1280.jpg" alt="Office Space" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Corporate Office</h5>
+                                <p>Professional workspace design</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 4 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://pixabay.com/get/g0d1701a4319302a80def9d6d791461a4569a9d66de96ae8b512c45f91329be4a151ebe3a139f2b01834e0b98b59229caed03c0d38ad334106fa6759c1368be36_1280.jpg" alt="Luxury Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Luxury Living Room</h5>
+                                <p>Elegant and sophisticated design</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 5 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://pixabay.com/get/gd7041d6443232e03447f0daf5217d170ccc78a72a94bb751793df5098fa56196c77f7097ad9d8684272b2775e99334cd16d87443c99d2bea5a6b3a672432382e_1280.jpg" alt="Modern Kitchen" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Modern Kitchen</h5>
+                                <p>Minimalist kitchen with smart storage</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 6 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="office">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://pixabay.com/get/g6f5f65b3d25effe945d412f14c3d1d0a1ca62d1745d8591be987564c72a2cac273e65fece536d1b3665775774cdc9344b01b6129d542b190b2cb0ba6b83e449d_1280.jpg" alt="Modern Office" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Modern Office</h5>
+                                <p>Creative workspace design</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section id="process" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">How It Works</h2>
+            <p class="section-subtitle">Our simple 3-step design process</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-4">
+                        <div class="process-number">1</div>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4 class="process-title">Discovery</h4>
+                    <p class="process-description">
+                        We start by understanding your vision, lifestyle, and preferences. Our team conducts a thorough assessment of your space and requirements.
+                    </p>
+                    <ul class="process-features text-start">
+                        <li>Initial consultation</li>
+                        <li>Space measurement</li>
+                        <li>Requirement analysis</li>
+                        <li>Budget discussion</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-4">
+                        <div class="process-number">2</div>
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h4 class="process-title">Design</h4>
+                    <p class="process-description">
+                        Our expert designers create detailed plans and 3D visualizations. We present multiple design options and refine them based on your feedback.
+                    </p>
+                    <ul class="process-features text-start">
+                        <li>Concept development</li>
+                        <li>3D visualizations</li>
+                        <li>Material selection</li>
+                        <li>Design approval</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-4">
+                        <div class="process-number">3</div>
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4 class="process-title">Execution</h4>
+                    <p class="process-description">
+                        We bring your design to life with meticulous project management. Our team ensures quality execution and timely completion of your project.
+                    </p>
+                    <ul class="process-features text-start">
+                        <li>Project planning</li>
+                        <li>Quality execution</li>
+                        <li>Regular updates</li>
+                        <li>Final handover</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="#contact" class="btn btn-primary btn-lg">
+                <i class="fas fa-rocket me-2"></i>Start Your Project
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">What Our Clients Say</h2>
+            <p class="section-subtitle">Real experiences from happy clients</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "Design Kraft transformed our living room into a beautiful and functional space. The team was professional, creative, and delivered exactly what we envisioned."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://pixabay.com/get/gfe693ab1e3d60a899acae4cd39bc62a1f3a9528fd63e0d092ffbc5ebb12efe86df40791d92ebc73c77d761a9358d7aac7138482eec29ad04d6fa56efc2169703_1280.jpg" alt="Client" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h6 class="author-name">Priya Sharma</h6>
+                            <p class="author-location">Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "Excellent service and attention to detail. Our office space now looks modern and inspires productivity. Highly recommend Design Kraft for commercial projects."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://pixabay.com/get/g85035f832f5d4c02806eb430add791bf01d3981e50f195ae19b43e77e1a208e35efc9ccbfc46c87edb05e28aede8403426f1406c3cfb26d8c9e63ea60b020b1e_1280.jpg" alt="Client" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h6 class="author-name">Rajesh Kumar</h6>
+                            <p class="author-location">Delhi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "The custom furniture designed by Design Kraft perfectly fits our home. Quality craftsmanship and innovative design solutions exceeded our expectations."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://pixabay.com/get/g3294edd73f97945e52beaf00cbab152688426abd290e67946d647abea285be7961f71cef56a5251dc7ee2c4f0f304bcfaead35fa63b7451d0acff2ff88090519_1280.jpg" alt="Client" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h6 class="author-name">Anita Patel</h6>
+                            <p class="author-location">Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">Book Your Free Consultation</h2>
+            <p class="section-subtitle">Let's discuss your dream space project</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-form-wrapper">
+                    <form action="{{ url_for('contact') }}" method="POST" class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="service_type" class="form-label">Service Type *</label>
+                                <select class="form-select" id="service_type" name="service_type" required>
+                                    <option value="">Select a service</option>
+                                    <option value="home_interior">Home Interior Design</option>
+                                    <option value="office_design">Office Space Design</option>
+                                    <option value="custom_furniture">Custom Furniture Design</option>
+                                    <option value="consultation">General Consultation</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="city" class="form-label">City</label>
+                                <select class="form-select" id="city" name="city">
+                                    <option value="">Select your city</option>
+                                    <option value="bangalore">Bangalore</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="budget_range" class="form-label">Budget Range</label>
+                                <select class="form-select" id="budget_range" name="budget_range">
+                                    <option value="">Select budget range</option>
+                                    <option value="1-3">₹1-3 Lakhs</option>
+                                    <option value="3-5">₹3-5 Lakhs</option>
+                                    <option value="5-10">₹5-10 Lakhs</option>
+                                    <option value="10+">₹10+ Lakhs</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Project Details</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your project requirements, preferred timeline, and any specific ideas you have in mind..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">
+                                <i class="fas fa-calendar-check me-2"></i>Book Free Consultation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="row mt-5">
+            <div class="col-lg-4 text-center mb-4">
+                <div class="contact-info-item">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-phone text-primary"></i>
+                    </div>
+                    <h6>Call Us</h6>
+                    <p class="mb-0">+91 98765 43210</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mb-4">
+                <div class="contact-info-item">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-envelope text-primary"></i>
+                    </div>
+                    <h6>Email Us</h6>
+                    <p class="mb-0">hello@designkraft.com</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mb-4">
+                <div class="contact-info-item">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-map-marker-alt text-primary"></i>
+                    </div>
+                    <h6>Visit Us</h6>
+                    <p class="mb-0">123 Design Street, Mumbai</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
