@@ -1,12 +1,17 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, session
 from extensions import db
 from models import ContactInquiry, NewsletterSubscription
 from datetime import datetime
 import logging
 
-# Do NOT import app here
-
 def register_routes(app):
+    @app.before_request
+    def auto_logout_admin():
+        # If admin is logged in and visiting a non-admin page, log out
+        admin_paths = ['/admin', '/admin/dashboard', '/admin/logout']
+        if session.get('admin_logged_in') and not any(request.path.startswith(path) for path in admin_paths):
+            session.pop('admin_logged_in', None)
+
     @app.route('/')
     def index():
         return render_template('index.html')
@@ -83,29 +88,54 @@ def register_routes(app):
         
         return redirect(url_for('index'))
 
-    @app.route('/admin')
-    def admin():
+    # TEMPORARY: CLEAR DATABASE ROUTE
+    @app.route('/clear_db')
+    def clear_db():
+        db.session.query(ContactInquiry).delete()
+        db.session.query(NewsletterSubscription).delete()
+        db.session.commit()
+        return "Database cleared! Remove this route after use."
+
+    # ADMIN LOGIN SYSTEM
+    @app.route('/admin', methods=['GET', 'POST'])
+    def admin_login():
+        if session.get('admin_logged_in'):
+            return redirect(url_for('admin_dashboard'))
+
+        if request.method == 'POST':
+            username = request.form.get('username')
+            password = request.form.get('password')
+            # Set your admin username and password here
+            if username == 'dreamkraft' and password == 'dreamkraft@2598':
+                session['admin_logged_in'] = True
+                return redirect(url_for('admin_dashboard'))
+            else:
+                flash('Invalid username or password', 'danger')
+        return render_template('admin_login.html')
+
+    @app.route('/admin/dashboard')
+    def admin_dashboard():
+        if not session.get('admin_logged_in'):
+            return redirect(url_for('admin_login'))
         # Get all contact inquiries
         inquiries = ContactInquiry.query.order_by(ContactInquiry.created_at.desc()).all()
-        
-        # Get newsletter subscribers
         subscribers = NewsletterSubscription.query.order_by(NewsletterSubscription.subscribed_at.desc()).all()
-        
-        # Calculate stats
         total_inquiries = len(inquiries)
-        
-        # Today's inquiries
         today = datetime.now().date()
         today_inquiries = len([i for i in inquiries if i.created_at.date() == today])
-        
         newsletter_subscribers = len(subscribers)
-        
         return render_template('admin.html', 
                             inquiries=inquiries,
                             subscribers=subscribers,
                             total_inquiries=total_inquiries,
                             today_inquiries=today_inquiries,
                             newsletter_subscribers=newsletter_subscribers)
+
+    @app.route('/admin/logout')
+    def admin_logout():
+        session.pop('admin_logged_in', None)
+        flash('Logged out successfully.', 'success')
+        return redirect(url_for('admin_login'))
 
     @app.context_processor
     def inject_now():

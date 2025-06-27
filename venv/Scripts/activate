@@ -35,7 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\bharat.gr\Downloads\dream-kraft-website\venv"
+VIRTUAL_ENV="C:\Users\bhara\Downloads\dream-kraft-website\dream-kraft-website\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

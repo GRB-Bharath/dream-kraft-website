@@ -4,22 +4,12 @@
 <!-- Hero Section -->
 <section id="home" class="hero-section">
     <div class="hero-background">
-            <video class="hero-image" autoplay loop muted playsinline>
-                <source src="{{ url_for('static', filename='videos/main video.mp4') }}" type="video/mp4" />
-                Your browser does not support the video tag.
-                            <div class="video-container" style="position:relative;">
-                <video src="your-video.mp4" autoplay muted loop style="width:100%;"></video>
-                <div class="gradient-overlay"></div>
-                <div class="hero-content">
-                    <!-- Your existing text and buttons here -->
-                </div>
-            </div>
-            </video>
-          
-            
+        <video class="hero-image" autoplay loop muted playsinline>
+            <source src="{{ url_for('static', filename='videos/main video.mp4') }}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
         <div class="hero-overlay"></div>
     </div>
-    
     <div class="container hero-content">
         <div class="row min-vh-100 align-items-center">
             <div class="col-lg-8 col-xl-7">
@@ -40,20 +30,19 @@
                         <i class="fas fa-eye me-2"></i>View Portfolio
                     </a>
                 </div>
-                
                 <!-- Quick Stats -->
                 <div class="hero-stats mt-5 animate-fade-in-delay-3">
                     <div class="row">
                         <div class="col-4">
                             <div class="stat-item">
-                                <h3 class="stat-number">500+</h3>
+                                <h3 class="stat-number">200+</h3>
                                 <p class="stat-label">Projects Completed</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="stat-item">
-                                <h3 class="stat-number">50+</h3>
-                                <p class="stat-label">Expert Designers</p>
+                                <h3 class="stat-number">30+</h3>
+                                <p class="stat-label">Expert Teams</p>
                             </div>
                         </div>
                         <div class="col-4">
@@ -74,7 +63,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="https://pixabay.com/get/ge36eeb2b1bdb3c578cd7c1680cd21e66ce68b1e6eb7adc6e89411f0f19a1d4375525ecda6ef6ecc4af06a4216b8b20ff4144bae9d89c80cbf3298f5d553f81d0_1280.jpg" alt="About Design Kraft" class="img-fluid rounded-3 shadow">
+                <img src="{{ url_for('static', filename='images/wall-416060_1920.jpg') }}" alt="About Design Kraft" class="img-fluid rounded-3 shadow">
             </div>
             <div class="col-lg-6 ps-lg-5">
                 <div class="about-content">
@@ -85,7 +74,6 @@
                     <p class="mb-4">
                         Our mission is to transform ordinary spaces into extraordinary environments that enhance your lifestyle. We believe that great design should be accessible to everyone, which is why we offer personalized solutions tailored to your budget and preferences.
                     </p>
-                    
                     <div class="about-features">
                         <div class="feature-item d-flex align-items-center mb-3">
                             <div class="feature-icon me-3">
@@ -96,7 +84,6 @@
                                 <p class="mb-0 text-muted">Recognized excellence in interior design</p>
                             </div>
                         </div>
-                        
                         <div class="feature-item d-flex align-items-center mb-3">
                             <div class="feature-icon me-3">
                                 <i class="fas fa-users text-primary"></i>
@@ -106,7 +93,6 @@
                                 <p class="mb-0 text-muted">Skilled designers and project managers</p>
                             </div>
                         </div>
-                        
                         <div class="feature-item d-flex align-items-center">
                             <div class="feature-icon me-3">
                                 <i class="fas fa-clock text-primary"></i>
@@ -130,13 +116,12 @@
             <h2 class="section-title mb-3">Our Services</h2>
             <p class="section-subtitle">Comprehensive interior design solutions for every space</p>
         </div>
-        
         <div class="row">
             <!-- Home Interior Design -->
             <div class="col-lg-4 mb-4">
                 <div class="service-card h-100">
                     <div class="service-image">
-                        <img src="https://pixabay.com/get/ga70217a19ee304a65b5ea8806c8f252692b7d419693e76814ef291ed13c3698bed07d7c0442b0eb59a5ddc221a0b87bb9b0c6e6d48ba349153bb2df1b015fc07_1280.jpg" alt="Home Interior Design" class="img-fluid">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/09/03/19/home-2486092_1280.jpg" alt="Home Interior Design" class="img-fluid">
                         <div class="service-overlay">
                             <div class="service-icon">
                                 <i class="fas fa-home"></i>
@@ -146,7 +131,7 @@
                     <div class="service-content">
                         <h4 class="service-title">Home Interior Design</h4>
                         <p class="service-description">
-                            Transform your living spaces with our comprehensive home interior design services. From living rooms to bedrooms, we create beautiful and functional spaces that reflect your lifestyle.
+                            Transform your living spaces with our comprehensive home interior design services. From living rooms to bedrooms, we create beautiful and functional spaces.
                         </p>
                         <ul class="service-features">
                             <li><i class="fas fa-check text-primary me-2"></i>Living Room Design</li>
@@ -162,12 +147,11 @@
                     </div>
                 </div>
             </div>
-            
             <!-- Office Space Design -->
             <div class="col-lg-4 mb-4">
                 <div class="service-card h-100">
                     <div class="service-image">
-                        <img src="https://pixabay.com/get/g5dca18acc482a3f065a6e504e18e61b68500832d7732f227d33ab90a90da59405f334a3f3e466e1da856a7b1e32de1910feacdebd2aef94db3a50a730567cf05_1280.jpg" alt="Office Space Design" class="img-fluid">
+                        <img src="https://cdn.pixabay.com/photo/2019/10/21/10/34/meeting-4565703_1280.jpg" alt="Office Space Design" class="img-fluid">
                         <div class="service-overlay">
                             <div class="service-icon">
                                 <i class="fas fa-building"></i>
@@ -193,12 +177,11 @@
                     </div>
                 </div>
             </div>
-            
             <!-- Custom Furniture Design -->
             <div class="col-lg-4 mb-4">
                 <div class="service-card h-100">
                     <div class="service-image">
-                        <img src="https://pixabay.com/get/g8c78663110e884c8fca2246534648d4d09451f8dd126b58128fea847c302f72bb9ae0826bb091e8f8d09ed48a8e1973ce91b2529c4fc56cb442d41c40394caeb_1280.jpg" alt="Custom Furniture Design" class="img-fluid">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg" alt="Custom Furniture Design" class="img-fluid">
                         <div class="service-overlay">
                             <div class="service-icon">
                                 <i class="fas fa-couch"></i>
@@ -235,21 +218,19 @@
             <h2 class="section-title mb-3">Our Portfolio</h2>
             <p class="section-subtitle">Explore our latest interior design projects</p>
         </div>
-        
         <!-- Portfolio Filter -->
         <div class="portfolio-filter text-center mb-4">
             <button class="btn btn-outline-primary active" data-filter="all">All Projects</button>
-            <button class="btn btn-outline-primary" data-filter="living">Living Room</button>
+            <button class="btn btn-outline-primary" data-filter="living-room">Living Room</button>
             <button class="btn btn-outline-primary" data-filter="kitchen">Kitchen</button>
-            <button class="btn btn-outline-primary" data-filter="office">Office</button>
+            <button class="btn btn-outline-primary" data-filter="bedroom">Bedroom</button>
         </div>
-        
         <div class="row portfolio-grid">
             <!-- Portfolio Item 1 -->
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living">
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="https://pixabay.com/get/g2e5a927f5ab47c2b93974c7bda4a13632c81d99f6b69a0712df77a04574fa4ba73a6d082419d6313614741f5e0376ae44d34c325235610858c4853c8d4cb4769_1280.jpg" alt="Modern Living Room" class="img-fluid">
+                        <img src="https://cdn.pixabay.com/photo/2018/01/18/15/32/apartment-3090517_1280.jpg" alt="Modern Living Room" class="img-fluid">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h5>Modern Living Room</h5>
@@ -262,12 +243,68 @@
                     </div>
                 </div>
             </div>
+
+                <!-- Add this inside <div class="row portfolio-grid"> ... </div> -->
+
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://cdn.pixabay.com/photo/2019/03/08/20/14/kitchen-living-room-4043091_1280.jpg" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Cozy Living Room</h5>
+                                <p>Warm and inviting living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
+                        <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/l1.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Modern Living Room</h5>
+                                <p>Warm and featurastic living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/l2.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Living Hall</h5>
+                                <p>living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             <!-- Portfolio Item 2 -->
             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="https://pixabay.com/get/ge487044c971cd5640806e743a4aab991f926e5c1ff1e287fd6938dfe163f4222606f2ac7b6a8d05eafed576a86728e2c5b7e5c30a3b19634ebe326e6103c34d9_1280.jpg" alt="Contemporary Kitchen" class="img-fluid">
+                        <img src="https://cdn.pixabay.com/photo/2017/06/13/22/42/kitchen-2400367_1280.jpg" alt="Contemporary Kitchen" class="img-fluid">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h5>Contemporary Kitchen</h5>
@@ -280,12 +317,85 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Portfolio Item 3 -->
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="office">
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="https://pixabay.com/get/g0f597dea907da42eee329d27f0c6fe5b3a206c912d20ab431430600307716407c5fe9821ad248650379dd3ef2534b8d193c480f2b52099bcb1273b8f5164b97a_1280.jpg" alt="Office Space" class="img-fluid">
+                        <img src="{{ url_for('static', filename='images/k1.png') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Living Hall</h5>
+                                <p>living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k2.png') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Living Hall</h5>
+                                <p>living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k3.png') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Living Hall</h5>
+                                <p>living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k4.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Living Hall</h5>
+                                <p>living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Portfolio Item 3 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://cdn.pixabay.com/photo/2020/03/23/07/59/office-4959782_1280.jpg" alt="Office Space" class="img-fluid">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h5>Corporate Office</h5>
@@ -298,12 +408,48 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Portfolio Item 4 -->
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living">
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="https://pixabay.com/get/g0d1701a4319302a80def9d6d791461a4569a9d66de96ae8b512c45f91329be4a151ebe3a139f2b01834e0b98b59229caed03c0d38ad334106fa6759c1368be36_1280.jpg" alt="Luxury Living Room" class="img-fluid">
+                        <img src="{{ url_for('static', filename='images/b1.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Living Hall</h5>
+                                <p>living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b2.png') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h5>Living Hall</h5>
+                                <p>living space</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Portfolio Item 4 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://cdn.pixabay.com/photo/2021/07/20/06/19/living-room-6479849_1280.jpg" alt="Luxury Living Room" class="img-fluid">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h5>Luxury Living Room</h5>
@@ -316,12 +462,11 @@
                     </div>
                 </div>
             </div>
-            
             <!-- Portfolio Item 5 -->
             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="https://pixabay.com/get/gd7041d6443232e03447f0daf5217d170ccc78a72a94bb751793df5098fa56196c77f7097ad9d8684272b2775e99334cd16d87443c99d2bea5a6b3a672432382e_1280.jpg" alt="Modern Kitchen" class="img-fluid">
+                        <img src="https://cdn.pixabay.com/photo/2023/11/06/02/20/kitchen-8368660_1280.jpg" alt="Modern Kitchen" class="img-fluid">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h5>Modern Kitchen</h5>
@@ -334,12 +479,11 @@
                     </div>
                 </div>
             </div>
-            
             <!-- Portfolio Item 6 -->
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="office">
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="https://pixabay.com/get/g6f5f65b3d25effe945d412f14c3d1d0a1ca62d1745d8591be987564c72a2cac273e65fece536d1b3665775774cdc9344b01b6129d542b190b2cb0ba6b83e449d_1280.jpg" alt="Modern Office" class="img-fluid">
+                        <img src="https://cdn.pixabay.com/photo/2015/04/20/06/46/office-730681_1280.jpg" alt="Modern Office" class="img-fluid">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h5>Modern Office</h5>
@@ -363,7 +507,6 @@
             <h2 class="section-title mb-3">How It Works</h2>
             <p class="section-subtitle">Our simple 3-step design process</p>
         </div>
-        
         <div class="row">
             <div class="col-lg-4 mb-4">
                 <div class="process-step text-center">
@@ -383,7 +526,6 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="col-lg-4 mb-4">
                 <div class="process-step text-center">
                     <div class="process-icon mb-4">
@@ -402,7 +544,6 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="col-lg-4 mb-4">
                 <div class="process-step text-center">
                     <div class="process-icon mb-4">
@@ -422,7 +563,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="text-center mt-5">
             <a href="#contact" class="btn btn-primary btn-lg">
                 <i class="fas fa-rocket me-2"></i>Start Your Project
@@ -438,7 +578,6 @@
             <h2 class="section-title mb-3">What Our Clients Say</h2>
             <p class="section-subtitle">Real experiences from happy clients</p>
         </div>
-        
         <div class="row">
             <div class="col-lg-4 mb-4">
                 <div class="testimonial-card">
@@ -447,21 +586,19 @@
                         <i class="fas fa-star text-warning"></i>
                         <i class="fas fa-star text-warning"></i>
                         <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
                     </div>
                     <blockquote class="testimonial-quote">
-                        "Design Kraft transformed our living room into a beautiful and functional space. The team was professional, creative, and delivered exactly what we envisioned."
+                        "Dream Kraft transformed our living room into a beautiful and functional space. The team was professional, creative, and delivered exactly what we envisioned."
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="https://pixabay.com/get/gfe693ab1e3d60a899acae4cd39bc62a1f3a9528fd63e0d092ffbc5ebb12efe86df40791d92ebc73c77d761a9358d7aac7138482eec29ad04d6fa56efc2169703_1280.jpg" alt="Client" class="testimonial-avatar">
+                        <img src="https://cdn.pixabay.com/photo/2024/07/03/06/45/nayan-sharma-8868983_1280.jpg" alt="Client" class="testimonial-avatar">
                         <div class="author-info">
                             <h6 class="author-name">Priya Sharma</h6>
-                            <p class="author-location">Mumbai</p>
+                            <p class="author-location">Singsandra <br>Bangalore</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class="col-lg-4 mb-4">
                 <div class="testimonial-card">
                     <div class="testimonial-rating mb-3">
@@ -472,18 +609,17 @@
                         <i class="fas fa-star text-warning"></i>
                     </div>
                     <blockquote class="testimonial-quote">
-                        "Excellent service and attention to detail. Our office space now looks modern and inspires productivity. Highly recommend Design Kraft for commercial projects."
+                        "Excellent service and attention to detail. Our office space now looks modern and inspires productivity. Highly recommend Dream Kraft for commercial projects."
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="https://pixabay.com/get/g85035f832f5d4c02806eb430add791bf01d3981e50f195ae19b43e77e1a208e35efc9ccbfc46c87edb05e28aede8403426f1406c3cfb26d8c9e63ea60b020b1e_1280.jpg" alt="Client" class="testimonial-avatar">
+                        <img src="https://cdn.pixabay.com/photo/2022/07/06/10/07/male-indian-model-7304773_1280.jpg" alt="Client" class="testimonial-avatar">
                         <div class="author-info">
                             <h6 class="author-name">Rajesh Kumar</h6>
-                            <p class="author-location">Delhi</p>
+                            <p class="author-location">HSR Layout <br>Bangalore</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class="col-lg-4 mb-4">
                 <div class="testimonial-card">
                     <div class="testimonial-rating mb-3">
@@ -494,13 +630,13 @@
                         <i class="fas fa-star text-warning"></i>
                     </div>
                     <blockquote class="testimonial-quote">
-                        "The custom furniture designed by Design Kraft perfectly fits our home. Quality craftsmanship and innovative design solutions exceeded our expectations."
+                        "The custom furniture designed by Dream Kraft perfectly fits our home. Quality craftsmanship and innovative design solutions exceeded our expectations."
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="https://pixabay.com/get/g3294edd73f97945e52beaf00cbab152688426abd290e67946d647abea285be7961f71cef56a5251dc7ee2c4f0f304bcfaead35fa63b7451d0acff2ff88090519_1280.jpg" alt="Client" class="testimonial-avatar">
+                        <img src="https://cdn.pixabay.com/photo/2022/03/06/23/04/man-7052697_1280.jpg" alt="Client" class="testimonial-avatar">
                         <div class="author-info">
-                            <h6 class="author-name">Anita Patel</h6>
-                            <p class="author-location">Bangalore</p>
+                            <h6 class="author-name">Ankith Patel</h6>
+                            <p class="author-location">Banshankari Layout<br>Bangalore</p>
                         </div>
                     </div>
                 </div>
@@ -516,7 +652,6 @@
             <h2 class="section-title mb-3">Book Your Free Consultation</h2>
             <p class="section-subtitle">Let's discuss your dream space project</p>
         </div>
-        
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="contact-form-wrapper">
@@ -531,7 +666,6 @@
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                         </div>
-                        
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="phone" class="form-label">Phone Number *</label>
@@ -548,7 +682,6 @@
                                 </select>
                             </div>
                         </div>
-                        
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="city" class="form-label">City</label>
@@ -569,12 +702,10 @@
                                 </select>
                             </div>
                         </div>
-                        
                         <div class="mb-4">
                             <label for="message" class="form-label">Project Details</label>
                             <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your project requirements, preferred timeline, and any specific ideas you have in mind..."></textarea>
                         </div>
-                        
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary btn-lg px-5">
                                 <i class="fas fa-calendar-check me-2"></i>Book Free Consultation
@@ -584,7 +715,6 @@
                 </div>
             </div>
         </div>
-        
         <!-- Contact Info -->
         <div class="row mt-5">
             <div class="col-lg-4 text-center mb-4">
@@ -593,7 +723,7 @@
                         <i class="fas fa-phone text-primary"></i>
                     </div>
                     <h6>Call Us</h6>
-                    <p class="mb-0">+91 98765 43210</p>
+                    <p class="mb-0">+91 9482586135 <br> +91 7676956701</p>
                 </div>
             </div>
             <div class="col-lg-4 text-center mb-4">
@@ -602,7 +732,7 @@
                         <i class="fas fa-envelope text-primary"></i>
                     </div>
                     <h6>Email Us</h6>
-                    <p class="mb-0">hello@designkraft.com</p>
+                    <p class="mb-0">dreamkraft.interio@gmail.com</p>
                 </div>
             </div>
             <div class="col-lg-4 text-center mb-4">
@@ -611,7 +741,7 @@
                         <i class="fas fa-map-marker-alt text-primary"></i>
                     </div>
                     <h6>Visit Us</h6>
-                    <p class="mb-0">123 Design Street, Mumbai</p>
+                    <p class="mb-0">36/5, Hustlehub Tech Park, Somasundarapalya Main Rd, adjacent 27th Main Road, ITI Layout, Sector 2, HSR Layout, HaralukunteVillage, Bengaluru, Karnataka 560102</p>
                 </div>
             </div>
         </div>
