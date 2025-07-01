@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Bootstrap Overrides */
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: linear-gradient(135deg, #FF4653, #FF4653);
     border: none;
     border-radius: var(--border-radius);
     padding: 0.75rem 2rem;
@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    background: linear-gradient(135deg, #46d7ff, #FF4653);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
@@ -116,7 +116,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Navigation */
-/* ...existing code... */
 .custom-navbar {
     background: linear-gradient(90deg, #fff 80%, #ffe5d0 100%);
     border-bottom: 1px solid #f3f3f3;
@@ -148,14 +147,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-consultation {
     font-size: 1rem;
-    /* border-radius: 24px; */
+    border-radius: 24px;
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(255,107,53,0.08);
 }
-/* ...existing code... */
-
-
-
 
 .navbar {
     background: rgba(255, 255, 255, 0.95) !important;
@@ -272,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-logo-img {
-    height: 2px;
+    height: 0px;
     width: auto;
     max-width: 300px;
     filter: brightness(0) invert(1);
@@ -313,7 +308,7 @@ h1, h2, h3, h4, h5, h6 {
 .animate-fade-in {
     opacity: 0;
     transform: translateY(30px);
-    /* animation: fadeInUp 1s forwards; */
+    animation: fadeInUp 1s forwards;
 }
 
 .animate-fade-in-delay {
@@ -359,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 .feature-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #3cff00, #859fba);
+    background: linear-gradient(135deg, #FF4653, #FF4653);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -489,8 +484,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio-filter .btn.active {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
+    background: #dc3545;
+    border-color: #dc3545;
     color: white;
 }
 
@@ -566,7 +561,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 120px;
     height: 120px;
     margin: 0 auto;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: linear-gradient(135deg, #dc3545, #ff4653);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -581,7 +576,7 @@ h1, h2, h3, h4, h5, h6 {
     right: -10px;
     width: 40px;
     height: 40px;
-    background: var(--accent-color);
+    background: #ffc107;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -704,7 +699,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #63ff42, #6cef86);
+    background: linear-gradient(135deg, #FF4653, #FF4653);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -749,20 +744,39 @@ footer h5, footer h6 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* ... existing rules ... */
+
+    /* ADD THIS NEW RULE OR MODIFY THE EXISTING COL-LG-8 */
+    .hero-content > .row > .col-lg-8 { /* Targeting the specific column */
+        padding-left: 1.5rem !important; /* Adjust as needed, e.g., 1rem, 2rem */
+        padding-right: 1.5rem !important; /* Adjust as needed */
+    }
+
+    /* Keep the .hero-content padding if you want additional padding inside the column */
+    .hero-content {
+        padding: 2rem 0; /* Revert to 0 horizontal padding, as column handles it now */
+    }
+
     .hero-title {
         font-size: 2.5rem;
+        margin-top: 20px;
+        padding-top: 1.5rem;
     }
     
     .hero-subtitle {
         font-size: 1.1rem;
+        margin-top: 1rem;
     }
-    
-    .section-title {
-        font-size: 2rem;
+
+    .hero-cta {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
-    
-    .contact-form-wrapper {
-        padding: 2rem 1.5rem;
+
+    .hero-cta .btn {
+        width: 100%;
     }
     
     .stat-number {
@@ -776,13 +790,17 @@ footer h5, footer h6 {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 676px) {
     .hero-title {
         font-size: 2rem;
+        /* Further adjust font size for very small screens */
+        margin-top: 15px; /* Reduce margin a bit more */
     }
     
     .hero-subtitle {
         font-size: 1rem;
+        /* Further adjust font size for very small screens */
+        margin-top: 0.8rem; /* Reduce margin a bit more */
     }
     
     .btn-lg {
@@ -805,7 +823,7 @@ footer h5, footer h6 {
 }
 
 .text-primary {
-    color: var(--primary-color) !important;
+    color: #fff !important;
 }
 
 .border-primary {
