@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg custom-navbar shadow-sm py-3 fixed-top">
         <div class="container-fluid px-lg-5">
             <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Dream Kraft Interiors" class="navbar-logo" style="background: transparent;">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Dream Kraft Interiors" class="navbar-logo">
                 <span class="fw-bold ms-2" style="font-size: 1.3rem; letter-spacing: 1px;">Dream Kraft Interiors</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -125,8 +125,8 @@
                     <p class="mb-0">&copy; {{ now.year }} Dream Kraft. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
-                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                    <a href="{{ url_for('privacy_policy') }}" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="{{ url_for('terms_of_service') }}" class="text-light text-decoration-none">Terms of Service</a>
                 </div>
             </div>
         </div>

@@ -137,6 +137,14 @@ def register_routes(app):
         flash('Logged out successfully.', 'success')
         return redirect(url_for('admin_login'))
 
+    @app.route('/privacy-policy')
+    def privacy_policy():
+        return render_template('privacy_policy.html')
+
+    @app.route('/terms-of-service')
+    def terms_of_service():
+        return render_template('terms_of_service.html')
+
     @app.context_processor
     def inject_now():
         return {'now': datetime.utcnow()}

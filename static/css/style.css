@@ -169,10 +169,32 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+/* Specific styling for navbar logo - remove background */
+.navbar .navbar-logo {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Ensure footer logo keeps its styling */
+footer .navbar-logo {
+    background: white !important;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+}
+
 .navbar-logo {
     height: 58px;
     width: auto;
     max-width: 80px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
 .nav-link {
@@ -744,6 +766,52 @@ footer h5, footer h6 {
     background: var(--primary-color);
     color: white !important;
     transform: translateY(-3px);
+}
+
+/* Back to Top Button */
+.scroll-to-top-btn {
+    background: linear-gradient(135deg, #ff4653, #0dcaf0) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 20px rgba(44, 85, 48, 0.3) !important;
+    backdrop-filter: blur(10px);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.scroll-to-top-btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color)) !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(44, 85, 48, 0.4) !important;
+    color: white !important;
+}
+
+.scroll-to-top-btn:active {
+    transform: translateY(-1px) scale(0.98) !important;
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3) !important;
+}
+
+.scroll-to-top-btn i {
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.scroll-to-top-btn:hover i {
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustments for back to top button */
+@media (max-width: 768px) {
+    .scroll-to-top-btn {
+        width: 50px !important;
+        height: 50px !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        font-size: 1rem;
+    }
 }
 
 /* Responsive Design */
