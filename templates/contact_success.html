@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You - Design Kraft{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-light min-vh-100 d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="success-content">
+                    <!-- Success Icon -->
+                    <div class="success-icon mb-4">
+                        <i class="fas fa-check-circle text-success" style="font-size: 4rem;"></i>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <h1 class="display-5 fw-bold mb-3">Thank You, {{ name }}!</h1>
+                    <p class="lead mb-4">
+                        Your consultation request for <strong>{{ service_type.replace('_', ' ').title() }}</strong> has been successfully submitted.
+                    </p>
+                    
+                    <!-- What's Next -->
+                    <div class="next-steps bg-white p-4 rounded-3 shadow-sm mb-4">
+                        <h4 class="text-primary mb-3">What happens next?</h4>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="step-item">
+                                    <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">
+                                        1
+                                    </div>
+                                    <h6>Quick Response</h6>
+                                    <p class="small text-muted">Our team will contact you within 2 hours</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="step-item">
+                                    <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">
+                                        2
+                                    </div>
+                                    <h6>Free Consultation</h6>
+                                    <p class="small text-muted">Schedule your complimentary design consultation</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="step-item">
+                                    <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">
+                                        3
+                                    </div>
+                                    <h6>Project Kickoff</h6>
+                                    <p class="small text-muted">Begin your design journey with us</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="contact-options mb-4">
+                        <h5 class="mb-3">Need immediate assistance?</h5>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 mb-2">
+                                <a href="tel:+91 9482586135" class="btn btn-outline-primary w-100">
+                                    <i class="fas fa-phone me-2"></i>Call +91 9482586135
+                                </a>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <a href="mailto:dreamkraft.interio@gmail.com" class="btn btn-outline-primary w-100">
+                                    <i class="fas fa-envelope me-2"></i>Email Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Actions -->
+                    <div class="additional-actions">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary me-3">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                        <!-- <a href="{{ url_for('index') }}#portfolio" class="btn btn-outline-secondary">
+                            <i class="fas fa-images me-2"></i>View Our Portfolio
+                        </a> -->
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="social-follow mt-5">
+                        <p class="text-muted mb-3">Follow us for design inspiration</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/dreamkraft_interiors?igsh=MXh1MmV0OHRtdTdjMg%3D%3D&utm_source=qr" class="btn btn-outline-dark me-2">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/919482586135" class="btn btn-outline-dark me-2">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <!-- <a href="#" class="btn btn-outline-dark me-2">
+                                <i class="fab fa-facebook"></i>
+                            </a> -->
+                            <!-- <a href="#" class="btn btn-outline-dark">
+                                <i class="fab fa-linkedin"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

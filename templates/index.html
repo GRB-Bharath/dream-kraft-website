@@ -1,0 +1,1069 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="hero-background">
+        <video class="hero-image" autoplay loop muted playsinline>
+            <source src="{{ url_for('static', filename='videos/main video.mp4') }}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-lg-8 col-xl-7">
+                <div class="hero-logo mb-4 animate-fade-in">
+                    <img src="" alt="Dream Kraft Interiors" class="hero-logo-img">
+                </div>
+                <h1 class="hero-title mb-4 animate-fade-in-delay">
+                    Create Your <span class="text-white">Dream Space</span> with Professional Interior Design
+                </h1>
+                <p class="hero-subtitle mb-5 animate-fade-in-delay">
+                    Create stunning interiors that reflect your style with our expert design team. From concept to completion, we bring your vision to life.
+                </p>
+                <div class="hero-cta animate-fade-in-delay-2">
+                    <a href="#contact" class="btn btn-primary btn-lg me-3 btn-consultation">
+                        <i class="fas fa-calendar-alt me-2"></i>Book Free Consultation
+                    </a>
+                    <a href="#portfolio" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-eye me-2"></i>View Portfolio
+                    </a>
+                </div>
+            
+                <div class="hero-stats mt-5 animate-fade-in-delay-3">
+                    <div class="row g-5 justify-content-center text-center">
+                        <div class="col-12 col-sm-6 col-md-2 mb-4">
+                            <div class="stat-item">
+                                <h3 class="stat-number">200+</h3>
+                                <p class="stat-label">Projects Completed</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-2 mb-4">
+                            <div class="stat-item">
+                                <h3 class="stat-number">30+</h3>
+                                <p class="stat-label">Expert Teams</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-2 mb-4">
+                            <div class="stat-item">
+                                <h3 class="stat-number">99%</h3>
+                                <p class="stat-label">Client Satisfaction</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-2 mb-4">
+                        <div class="stat-item">
+                            <h3 class="stat-number">10+</h3>
+                            <p class="stat-label">Years Warranty</p>
+                        </div>
+                    </div>
+                        <div class="col-12 col-sm-6 col-md-2 mb-4">
+                        <div class="stat-item">
+                            <h3 class="stat-number">30*</h3>
+                            <p class="stat-label">Days Delivery</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='images/wall-416060_1920.jpg') }}" alt="About Design Kraft" class="img-fluid rounded-3 shadow">
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <div class="about-content">
+                    <h2 class="section-title mb-4">About Dream Kraft Interiors</h2>
+                    <p class="lead mb-4">
+                       <strong> We are passionate about creating spaces that inspire and reflect your unique personality. With years of experience in interior design, our team combines creativity with functionality to deliver exceptional results.</strong>
+                    </p>
+                    <p class="mb-4">
+                        Our mission is to transform ordinary spaces into extraordinary environments that enhance your lifestyle. We believe that great design should be accessible to everyone, which is why we offer personalized solutions tailored to your budget and preferences.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-trophy text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">customized-Designs</h6>
+                                <p class="mb-0 text-muted">Recognized excellence in interior design</p>
+                            </div>
+                        </div>
+                        <div class="feature-item d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-users text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Expert Team</h6>
+                                <p class="mb-0 text-muted">Skilled designers and project managers</p>
+                            </div>
+                        </div>
+                        <div class="feature-item d-flex align-items-center">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-clock text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Timely Delivery</h6>
+                                <p class="mb-0 text-muted">Projects completed on schedule</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">Our Services</h2>
+            <p class="section-subtitle">Comprehensive interior design solutions for every space</p>
+        </div>
+        <div class="row">
+            <!-- Home Interior Design -->
+            <div class="col-lg-4 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/09/03/19/home-2486092_1280.jpg" alt="Home Interior Design" class="img-fluid">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title">Home Interior Design</h4>
+                        <p class="service-description">
+                            Transform your living spaces with our comprehensive home interior design services. From living rooms to bedrooms, we create beautiful and functional spaces.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check text-primary me-2"></i>Living Room </li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Bedroom </li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Kitchen </li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Bathroom </li>
+                        </ul>
+                        <div class="service-pricing">
+                            <span class="price-from">Starting from</span>
+                            <span class="price-amount">₹1,00,000</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary service-cta">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Office Space Design -->
+            <div class="col-lg-4 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-image">
+                        <img src="https://cdn.pixabay.com/photo/2019/10/21/10/34/meeting-4565703_1280.jpg" alt="Office Space Design" class="img-fluid">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title">Office Space Design</h4>
+                        <p class="service-description">
+                            Create productive and inspiring work environments with our office interior design solutions. We design spaces that enhance productivity and reflect your company culture.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check text-primary me-2"></i>Open Office Layout</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Meeting Rooms</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Reception Areas</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Break Rooms</li>
+                        </ul>
+                        <div class="service-pricing">
+                            <span class="price-from">Starting from</span>
+                            <span class="price-amount">₹1,00,000</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary service-cta">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Custom Furniture Design -->
+            <div class="col-lg-4 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg" alt="Custom Furniture Design" class="img-fluid">
+                        <div class="service-overlay">
+                            <div class="service-icon">
+                                <i class="fas fa-couch"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title">Custom Loose Furniture Design</h4>
+                        <p class="service-description">
+                            Get bespoke furniture pieces designed specifically for your space and needs. Our custom furniture combines style, functionality, and quality craftsmanship.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check text-primary me-2"></i>modular bed</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>dining table</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Study Tables/sofa</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>shoe rack</li>
+                        </ul>
+                        <div class="service-pricing">
+                            <span class="price-from">Starting from</span>
+                            <span class="price-amount">₹30,000</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary service-cta">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">Our Portfolio</h2>
+            <p class="section-subtitle">Explore our latest interior design projects</p>
+        </div>
+        <!-- Portfolio Filter -->
+        <div class="portfolio-filter text-center mb-4">
+            <button class="btn btn-outline-primary active" data-filter="all">All Projects</button>
+            <button class="btn btn-outline-primary" data-filter="living-room">Living Room</button>
+            <button class="btn btn-outline-primary" data-filter="kitchen">Kitchen</button>
+            <button class="btn btn-outline-primary" data-filter="bedroom">Bedroom</button>
+        </div>
+        <div class="row portfolio-grid">
+            <!-- Portfolio Item 1 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/l1.jpg') }}" alt="Modern Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Modern Living Room</h5>
+                                <p>Contemporary design with clean lines</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Add this inside <div class="row portfolio-grid"> ... </div> -->
+
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/l2.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Cozy Living Room</h5>
+                                <p>Warm and inviting living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                        <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/l3.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Modern Living Room</h5>
+                                <p>Warm and featurastic living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/L4.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/L6.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/L7.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/L9.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/L10.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Portfolio Item 2 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k1.jpg') }}" alt="Contemporary Kitchen" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Contemporary Kitchen</h5>
+                                <p>Sleek and functional kitchen design</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k2.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k3.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k4.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k5.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k6.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k7.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k8.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k9.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k10.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k11.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Portfolio Item 3 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b3.jpg') }}" alt="Office Space" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Corporate Office</h5>
+                                <p>Professional workspace design</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b4.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b5.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b6.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b7.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b8.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b9.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b10.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b11.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b12.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b13.jpg') }}" alt="Cozy Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Living Hall</h5>
+                                <p>living space</p> -->
+                                <!-- <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Portfolio Item 4 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/l5.jpg') }}" alt="Luxury Living Room" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Luxury Living Room</h5>
+                                <p>Elegant and sophisticated design</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Portfolio Item 5 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="kitchen">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/k11.jpg') }}" alt="Modern Kitchen" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Modern Kitchen</h5>
+                                <p>Minimalist kitchen with smart storage</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Portfolio Item 6 -->
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="bedroom">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ url_for('static', filename='images/b1.jpg') }}" alt="Modern Office" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <!-- <h5>Modern Office</h5>
+                                <p>Creative workspace design</p>
+                                <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section id="process" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">How It Works</h2>
+            <p class="section-subtitle">Our simple 3-step design process</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-4">
+                        <div class="process-number">1</div>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4 class="process-title">Discovery</h4>
+                    <p class="process-description">
+                        We start by understanding your vision, lifestyle, and preferences. Our team conducts a thorough assessment of your space and requirements.
+                    </p>
+                    <ul class="process-features text-start">
+                        <li>Initial consultation</li>
+                        <li>Space measurement</li>
+                        <li>Requirement analysis</li>
+                        <li>Budget discussion</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-4">
+                        <div class="process-number">2</div>
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h4 class="process-title">Design</h4>
+                    <p class="process-description">
+                        Our expert designers create detailed plans and 3D visualizations. We present multiple design options and refine them based on your feedback.
+                    </p>
+                    <ul class="process-features text-start">
+                        <li>Concept development</li>
+                        <li>3D visualizations</li>
+                        <li>Material selection</li>
+                        <li>Design approval</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-4">
+                        <div class="process-number">3</div>
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4 class="process-title">Execution</h4>
+                    <p class="process-description">
+                        We bring your design to life with meticulous project management. Our team ensures quality execution and timely completion of your project.
+                    </p>
+                    <ul class="process-features text-start">
+                        <li>Project planning</li>
+                        <li>Quality execution</li>
+                        <li>Regular updates</li>
+                        <li>Final handover</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="#contact" class="btn btn-primary btn-lg">
+                <i class="fas fa-rocket me-2"></i>Start Your Project
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">What Our Clients Say</h2>
+            <p class="section-subtitle">Real experiences from happy clients</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "Recently I have got done my Home interiors from Dreamkraft, Happy with the service provided by the team, got the handover in 25 days, Good Design suggestions, Good project management, I highly recommend to go ahead, and I have referred 2 of my friends<br>Thanks Dreamkraft team.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <!-- <img src="https://cdn.pixabay.com/photo/2024/07/03/06/45/nayan-sharma-8868983_1280.jpg" alt="Client" class="testimonial-avatar"> -->
+                        <div class="author-info">
+                            <h6 class="author-name">Mehreen Sultana</h6>
+                            <p class="author-location">Singsandra <br>Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "Thank you dream kraft for the amazing work. They have literally turned my dream to reality ❤️. Amazing team work and they kept updating about every little detail of the work which made it much more easier. good quality of work and they have completed the work in 30 days. I would highly recommend them for your interior works."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <!-- <img src="https://cdn.pixabay.com/photo/2022/07/06/10/07/male-indian-model-7304773_1280.jpg" alt="Client" class="testimonial-avatar"> -->
+                        <div class="author-info">
+                            <h6 class="author-name">Keerthana Prabhakar</h6>
+                            <p class="author-location">HSR Layout <br>Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "The custom furniture designed by Dream Kraft perfectly fits our home. Quality craftsmanship and innovative design solutions exceeded our expectations. We are extremely happy with the final result. Highly recommend Dream Kraft for any interior design needs."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <!-- <img src="https://cdn.pixabay.com/photo/2022/03/06/23/04/man-7052697_1280.jpg" alt="Client" class="testimonial-avatar"> -->
+                        <div class="author-info">
+                            <h6 class="author-name">Ankith Patel</h6>
+                            <p class="author-location">Banshankari Layout<br>Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-3">Book Your Free Consultation</h2>
+            <p class="section-subtitle">Let's discuss your dream space project</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-form-wrapper">
+                    <form action="{{ url_for('contact') }}" method="POST" class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="service_type" class="form-label">Service Type *</label>
+                                <select class="form-select" id="service_type" name="service_type" required>
+                                    <option value="">Select a service</option>
+                                    <option value="home_interior">Home Interior Design</option>
+                                    <option value="office_design">Office Space Design</option>
+                                    <option value="custom_furniture">Custom Furniture Design</option>
+                                    <option value="consultation">General Consultation</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="city" class="form-label">City</label>
+                                <select class="form-select" id="city" name="city">
+                                    <option value="">Select your city</option>
+                                    <option value="bangalore">Bangalore</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="budget_range" class="form-label">Budget Range</label>
+                                <select class="form-select" id="budget_range" name="budget_range">
+                                    <option value="">Select budget range</option>
+                                    <option value="1-3">₹1-3 Lakhs</option>
+                                    <option value="3-5">₹3-5 Lakhs</option>
+                                    <option value="5-10">₹5-10 Lakhs</option>
+                                    <option value="10+">₹10+ Lakhs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Project Details</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your project requirements, preferred timeline, and any specific ideas you have in mind..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">
+                                <i class="fas fa-calendar-check me-2"></i>Book Free Consultation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Info -->
+        <div class="row mt-5">
+            <div class="col-lg-4 text-center mb-4">
+                <div class="contact-info-item">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-phone text-primary"></i>
+                    </div>
+                    <h6>Call Us</h6>
+                    <p class="mb-0">+91 9482586135 <br> +91 7676956701</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mb-4">
+                <div class="contact-info-item">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-envelope text-primary"></i>
+                    </div>
+                    <h6>Email Us</h6>
+                    <p class="mb-0">dreamkraft.interio@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mb-4">
+                <div class="contact-info-item">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-map-marker-alt text-primary"></i>
+                    </div>
+                    <h6>Visit Us</h6>
+                    <p class="mb-0">36/5, Hustlehub Tech Park, Somasundarapalya Main Rd, adjacent 27th Main Road, ITI Layout, Sector 2, HSR Layout, HaralukunteVillage, Bengaluru, Karnataka 560102</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

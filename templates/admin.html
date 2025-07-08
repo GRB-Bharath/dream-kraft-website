@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - Dream Kraft Interiors{% endblock %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">
+                <i class="fas fa-chart-bar me-2"></i>Dream Kraft Interiors Admin Dashboard
+            </h2>
+        </div>
+    </div>
+    
+    <!-- Stats Cards -->
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>{{ total_inquiries }}</h4>
+                            <p class="mb-0">Total Inquiries</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>{{ today_inquiries }}</h4>
+                            <p class="mb-0">Today's Inquiries</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-calendar-day fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>{{ newsletter_subscribers }}</h4>
+                            <p class="mb-0">Newsletter Subscribers</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Consultation Bookings -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-calendar-alt me-2"></i>Recent Consultation Bookings
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if inquiries %}
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Service</th>
+                                    <th>City</th>
+                                    <th>Budget</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for inquiry in inquiries %}
+                                <tr>
+                                    <td>{{ inquiry.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                                    <td>{{ inquiry.name }}</td>
+                                    <td>
+                                        <a href="mailto:{{ inquiry.email }}">{{ inquiry.email }}</a>
+                                    </td>
+                                    <td>
+                                        <a href="tel:{{ inquiry.phone }}">{{ inquiry.phone }}</a>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-primary">
+                                            {{ inquiry.service_type.replace('_', ' ').title() }}
+                                        </span>
+                                    </td>
+                                    <td>{{ inquiry.city.title() if inquiry.city else '-' }}</td>
+                                    <td>{{ inquiry.budget_range if inquiry.budget_range else '-' }}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary" 
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#messageModal{{ inquiry.id }}">
+                                            View Message
+                                        </button>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Message Modal -->
+                                <div class="modal fade" id="messageModal{{ inquiry.id }}" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Message from {{ inquiry.name }}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p><strong>Email:</strong> {{ inquiry.email }}</p>
+                                                <p><strong>Phone:</strong> {{ inquiry.phone }}</p>
+                                                <p><strong>Service:</strong> {{ inquiry.service_type.replace('_', ' ').title() }}</p>
+                                                <p><strong>City:</strong> {{ inquiry.city.title() if inquiry.city else 'Not specified' }}</p>
+                                                <p><strong>Budget:</strong> {{ inquiry.budget_range if inquiry.budget_range else 'Not specified' }}</p>
+                                                <hr>
+                                                <p><strong>Message:</strong></p>
+                                                <p>{{ inquiry.message if inquiry.message else 'No message provided' }}</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="mailto:{{ inquiry.email }}" class="btn btn-primary">
+                                                    <i class="fas fa-envelope me-1"></i>Reply by Email
+                                                </a>
+                                                <a href="tel:{{ inquiry.phone }}" class="btn btn-success">
+                                                    <i class="fas fa-phone me-1"></i>Call
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center py-4">
+                        <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                        <h5>No consultation bookings yet</h5>
+                        <p class="text-muted">Bookings will appear here when customers submit the contact form.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Subscribers -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-envelope me-2"></i>Newsletter Subscribers
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if subscribers %}
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Subscribed Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for subscriber in subscribers %}
+                                <tr>
+                                    <td>
+                                        <a href="mailto:{{ subscriber.email }}">{{ subscriber.email }}</a>
+                                    </td>
+                                    <td>{{ subscriber.subscribed_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center py-4">
+                        <i class="fas fa-envelope-open fa-3x text-muted mb-3"></i>
+                        <h5>No newsletter subscribers yet</h5>
+                        <p class="text-muted">Subscribers will appear here when visitors sign up for your newsletter.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
