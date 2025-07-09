@@ -2,6 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Handle page loading
+    initPageLoader();
+    
     // Initialize all components
     initNavigation();
     initPortfolioFilter();
@@ -10,6 +13,73 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormValidation();
     initScrollToTop();
     initParallax();
+    initLazyVideoLoading();
+
+    // Page loader function
+    function initPageLoader() {
+        const loader = document.getElementById('page-loader');
+        if (!loader) return;
+
+        // Hide loader after all content is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                loader.classList.add('loaded');
+                // Remove from DOM after animation completes
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 500); // Give a small delay so users can see the loader
+        });
+
+        // If page takes too long to load, hide loader after 5 seconds
+        setTimeout(function() {
+            if (!loader.classList.contains('loaded')) {
+                loader.classList.add('loaded');
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 500);
+            }
+        }, 5000);
+    }
+
+    // Lazy video loading function
+    function initLazyVideoLoading() {
+        const video = document.getElementById('hero-video');
+        const videoSource = document.getElementById('video-source');
+        
+        if (!video || !videoSource) return;
+        
+        // Get video source from data attribute
+        const videoSrc = video.getAttribute('data-src');
+        
+        if (!videoSrc) return;
+        
+        // Function to load video
+        function loadVideo() {
+            videoSource.src = videoSrc;
+            video.load();
+            video.play().catch(error => {
+                console.log('Video autoplay was prevented: ', error);
+            });
+        }
+        
+        // Use Intersection Observer to load video when it's in viewport
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadVideo();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            observer.observe(video);
+        } else {
+            // Fallback for browsers without Intersection Observer
+            loadVideo();
+        }
+    }
 
     // Navbar scroll effect
     function initNavigation() {
