@@ -77,7 +77,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='images/wall-416060_1920.jpg') }}" alt="About Design Kraft" class="img-fluid rounded-3 shadow">
+                <img src="{{ url_for('static', filename='images/wall-416060_1920.jpg') }}" alt="About Design Kraft" class="img-fluid rounded-3 shadow" loading="lazy" width="600" height="400">
             </div>
             <div class="col-lg-6 ps-lg-5">
                 <div class="about-content">
@@ -94,7 +94,7 @@
                                 <i class="fas fa-trophy text-primary"></i>
                             </div>
                             <div>
-                                <h6 class="mb-1">customized-Designs</h6>
+                                <h6 class="mb-1">Customized-Designs</h6>
                                 <p class="mb-0 text-muted">Recognized excellence in interior design</p>
                             </div>
                         </div>
@@ -244,7 +244,7 @@
             <div class="col-lg-4 col-md-6 mb-4 portfolio-item" data-category="living-room">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="{{ url_for('static', filename='images/L1.jpg') }}" alt="Modern Living Room" class="img-fluid">
+                        <img src="{{ url_for('static', filename='images/L1.jpg') }}" alt="Modern Living Room" class="img-fluid" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <!-- <h5>Modern Living Room</h5>
@@ -980,17 +980,17 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="name" class="form-label">Full Name *</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <input type="text" class="form-control" id="name" name="name" required autocomplete="name">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="email" class="form-label">Email Address *</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="email" class="form-control" id="email" name="email" required autocomplete="email">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="phone" class="form-label">Phone Number *</label>
-                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <input type="tel" class="form-control" id="phone" name="phone" required autocomplete="tel">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="service_type" class="form-label">Service Type *</label>

@@ -897,17 +897,19 @@ footer h5, footer h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--white);
+    background-color: #ffffff; /* Using explicit white color instead of variable */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
     transition: opacity 0.5s, visibility 0.5s;
+    pointer-events: none; /* Prevent interaction while loading */
 }
 
 #page-loader.loaded {
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s; /* Faster transition when hiding */
 }
 
 .loader-content {
@@ -921,6 +923,27 @@ footer h5, footer h6 {
 @keyframes pulse {
     from { transform: scale(0.95); }
     to { transform: scale(1.05); }
+}
+
+/* Page Loading States */
+body.loading {
+    overflow: hidden;
+}
+
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff !important; /* Force white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s, visibility 0.3s; /* Faster transition */
+    pointer-events: none; /* Prevent interaction while loading */
+    will-change: opacity, visibility; /* Performance optimization */
 }
 
 /* Video Optimization */

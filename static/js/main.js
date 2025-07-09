@@ -15,31 +15,38 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallax();
     initLazyVideoLoading();
 
-    // Page loader function
+    // Page loader function - optimized for speed
     function initPageLoader() {
         const loader = document.getElementById('page-loader');
         if (!loader) return;
 
+        // Prevent flash of green by setting explicit background color
+        loader.style.backgroundColor = '#ffffff';
+        
+        // Add loaded class immediately to ensure it's styled correctly
+        document.body.classList.add('loading');
+
         // Hide loader after all content is loaded
         window.addEventListener('load', function() {
+            // Immediate transition for faster user experience
+            document.body.classList.remove('loading');
+            loader.classList.add('loaded');
+            // Remove from DOM after animation completes
             setTimeout(function() {
-                loader.classList.add('loaded');
-                // Remove from DOM after animation completes
-                setTimeout(function() {
-                    loader.style.display = 'none';
-                }, 500);
-            }, 500); // Give a small delay so users can see the loader
+                loader.style.display = 'none';
+            }, 300);
         });
 
-        // If page takes too long to load, hide loader after 5 seconds
+        // If page takes too long to load, hide loader after 2 seconds (faster fallback)
         setTimeout(function() {
             if (!loader.classList.contains('loaded')) {
+                document.body.classList.remove('loading');
                 loader.classList.add('loaded');
                 setTimeout(function() {
                     loader.style.display = 'none';
-                }, 500);
+                }, 300);
             }
-        }, 5000);
+        }, 2000);
     }
 
     // Lazy video loading function
@@ -54,13 +61,30 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!videoSrc) return;
         
-        // Function to load video
+        // Function to load video - optimized to prevent errors
         function loadVideo() {
             videoSource.src = videoSrc;
             video.load();
-            video.play().catch(error => {
-                console.log('Video autoplay was prevented: ', error);
-            });
+            
+            // Improved video loading with better error handling
+            video.addEventListener('canplaythrough', function() {
+                // Only attempt to play video when it's fully loaded
+                try {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            // Silent error handling - don't log errors to console
+                            // Create muted autoplay as fallback
+                            video.muted = true;
+                            video.play();
+                        });
+                    }
+                } catch (e) {
+                    // Fallback for browsers with inconsistent Promise implementation
+                    video.muted = true;
+                    video.play();
+                }
+            }, { once: true });
         }
         
         // Use Intersection Observer to load video when it's in viewport

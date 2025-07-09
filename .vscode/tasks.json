@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Dream Kraft Website - Production Mode",
+			"type": "shell",
+			"command": "python app.py",
+			"group": "run",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
