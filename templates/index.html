@@ -4,11 +4,9 @@
 <!-- Hero Section -->
 <section id="home" class="hero-section">
     <div class="hero-background">
-        <video class="hero-image" autoplay loop muted playsinline preload="metadata" 
-               poster="{{ url_for('static', filename='images/b1.jpg') }}"
-               id="hero-video" data-src="{{ url_for('static', filename='videos/main video.mp4') }}">
-            <source src="" type="video/mp4" id="video-source" />
-            Your browser does not support the video tag.
+       <video class="hero-image" autoplay loop muted playsinline preload="metadata" 
+            id="hero-video" src="{{ url_for('static', filename='videos/main video.mp4') }}">
+             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
     </div>
