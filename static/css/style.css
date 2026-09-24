@@ -32,12 +32,12 @@
     /* Design tokens */
     --bg: #FFFBF6;
     --text: #613B27;
-    --btn: #B16744;
+    --btn: #965333;
     --btn-text: #FFFBF6;
     --bg-rgb: 255, 251, 246;
     --text-rgb: 97, 59, 39;
     --btn-rgb: 177, 103, 68;
-    --text-muted: color-mix(in srgb, var(--text) 62%, white);
+    --text-muted: #765844;
     --font-base: 'Etna Sans Serif', 'Etna', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
     /* Legacy variable names kept so every rule below stays on the new tokens */
@@ -167,6 +167,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--btn-text) !important;
 }
 
+:where(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid var(--btn);
+    outline-offset: 3px;
+}
+
 @keyframes pulse-glow {
     0%, 100% { box-shadow: 0 0 5px rgba(var(--btn-rgb), 0.4); }
     50% { box-shadow: 0 0 20px rgba(var(--btn-rgb), 0.6); }
@@ -262,6 +267,36 @@ footer .navbar-logo {
     white-space: nowrap;
     flex-shrink: 0;
     box-shadow: 0 2px 8px rgba(var(--btn-rgb), 0.15);
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+    .navbar > .container-fluid {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        gap: 0.75rem;
+    }
+
+    .navbar-logo {
+        height: 44px;
+    }
+
+    .brand-name {
+        font-size: 1.25rem;
+        letter-spacing: 0.5px;
+    }
+
+    .navbar-nav {
+        gap: 0.95rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .btn-consultation {
+        font-size: 0.85rem;
+        padding: 0.65rem 1rem !important;
+    }
 }
 
 @media (max-width: 991.98px) {
