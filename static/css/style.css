@@ -125,6 +125,8 @@ h1, h2, h3, h4, h5, h6 {
 .section-subtitle {
     font-size: clamp(1rem, 0.9rem + 0.4vw, 1.2rem);
     color: var(--text-muted);
+    font-weight: 500;
+    line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -246,7 +248,7 @@ footer .navbar-logo {
 
 .nav-link {
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text) !important;
     white-space: nowrap;
     padding: 0.25rem 0 !important;
@@ -479,9 +481,13 @@ footer .navbar-logo {
 }
 
 .lead {
-    font-size: 16px;
-    font-weight: 300; /* Light weight for normal text */
+    font-size: clamp(1.08rem, 1rem + 0.35vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.75;
     color: var(--text-dark);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .feature-item {
