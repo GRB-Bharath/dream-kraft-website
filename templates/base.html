@@ -39,7 +39,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #ffffff !important;
+            background-color: var(--bg, #FFFBF6) !important;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -60,7 +60,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg custom-navbar shadow-sm py-3 fixed-top">
-        <div class="container-fluid px-lg-5">
+        <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('index') }}">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Dream Kraft Interiors" class="navbar-logo">
                 <span class="fw-bold ms-2" style="font-size: 1.3rem; letter-spacing: 1px;">Dream Kraft Interiors</span>
@@ -72,14 +72,14 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center gap-3">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Our Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
                     <li class="nav-item">
-                        <a href="#contact" class="btn btn-consultation ms-2 px-4 py-2 shadow-sm">BOOK FREE CONSULTATION</a>
+                        <a href="#" class="btn btn-consultation ms-2 px-4 py-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#quickConsultationModal">BOOK FREE CONSULTATION</a>
                     </li>
                 </ul>
             </div>
@@ -106,52 +106,44 @@
     <!-- Footer -->
     <footer class="bg-dark text-light py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
+            <div class="row align-items-center">
+                <div class="col-lg-3 mb-4">
                     <div class="footer-logo mb-3">
                         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Dream Kraft Interiors" class="navbar-logo shadow rounded bg-white" style="width: 120px; height: auto;">
                     </div>
-                    <p class="mb-3">Transforming spaces with innovative interior design solutions. Your dream space is just a consultation away.</p>
+                    <p class="mb-3 footer-tagline">Transforming spaces with innovative interior design solutions. Your dream space is just a consultation away.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/dreamkraft_interiors?igsh=MXh1MmV0OHRtdTdjMg%3D%3D&utm_source=qr" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="https://wa.me/919482586135" class="text-light me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
-                        <!-- <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a> -->
+                        <a href="https://wa.me/918296274958" class="text-light me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
                         <!-- <a href="#" class="text-light"><i class="fab fa-linkedin fa-lg"></i></a> -->
                     </div>
                 </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h6 class="fw-bold mb-3">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#home" class="text-light text-decoration-none">Home</a></li>
-                        <li><a href="#about" class="text-light text-decoration-none">About</a></li>
-                        <li><a href="#services" class="text-light text-decoration-none">Services</a></li>
-                        <li><a href="#portfolio" class="text-light text-decoration-none">Portfolio</a></li>
-                        <li><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h6 class="fw-bold mb-3">Services</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#services" class="text-light text-decoration-none">Home Interior Design</a></li>
-                        <li><a href="#services" class="text-light text-decoration-none">Office Space Design</a></li>
-                        <li><a href="#services" class="text-light text-decoration-none">Custom Furniture</a></li>
-                        <li><a href="#contact" class="text-light text-decoration-none">Free Consultation</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 mb-4">
-                    <h6 class="fw-bold mb-3">Newsletter</h6>
-                    <p class="small mb-3">Subscribe for design tips and latest updates</p>
-                    <form action="{{ url_for('newsletter_signup') }}" method="POST">
-                        <div class="input-group">
-                            <input type="email" class="form-control" id="newsletter_email" name="newsletter_email" placeholder="Your email" required autocomplete="email">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
+
+                <div class="col-lg-9 mb-4">
+                    <div class="row g-4 footer-contact-row">
+                        <div class="col-lg-3 footer-contact-col">
+                            <div class="footer-contact-item d-flex align-items-center gap-3">
+                                <div class="footer-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                                <div class="footer-contact-text footer-contact-nowrap">
+                                    <a href="tel:+919482586135" class="text-light text-decoration-none d-block">+91 9482586135</a>
+                                    <a href="tel:+917676956701" class="text-light text-decoration-none d-block">+91 7676956701</a>
+                                </div>
+                            </div>
                         </div>
-                    </form>
+                        <div class="col-lg-4 footer-contact-col">
+                            <div class="footer-contact-item d-flex align-items-center gap-3">
+                                <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                                <a href="mailto:dreamkraft.interio@gmail.com" class="text-light text-decoration-none footer-contact-text footer-contact-nowrap">dreamkraft.interio@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 footer-contact-col">
+                            <div class="footer-contact-item d-flex align-items-center gap-3">
+                                <div class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <span class="text-light footer-contact-text">36/5, Hustlehub Tech Park, Somasundarapalya Main Rd, adjacent 27th Main Road, ITI Layout, Sector 2, HSR Layout, HaralukunteVillage, Bengaluru, Karnataka 560102</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -184,6 +176,64 @@
 </div>
 
     </footer>
+
+    <!-- Quick Consultation Modal -->
+    <div class="modal fade" id="quickConsultationModal" tabindex="-1" aria-labelledby="quickConsultationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content quick-consultation-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="quickConsultationLabel">Book Your Free Consultation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4">Share a few quick details and our design team will call you back.</p>
+
+                    <div id="qcAlert" class="alert d-none" role="alert"></div>
+
+                    <form id="quickConsultationForm" class="contact-form" action="{{ url_for('quick_consultation') }}" method="POST" novalidate>
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <div class="mb-3">
+                            <label for="qc_name" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="qc_name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="qc_phone" class="form-label">Mobile Number *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">+91</span>
+                                <input type="tel" class="form-control" id="qc_phone" name="phone" pattern="[6-9][0-9]{9}" maxlength="10" inputmode="numeric" placeholder="Enter phone number" required autocomplete="tel">
+                            </div>
+                            <div class="form-text">Enter a valid 10-digit Indian mobile number.</div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="qc_project_type" class="form-label">Choose Project *</label>
+                            <select class="form-select qc-project-select" id="qc_project_type" name="project_type" required>
+                                <option value="" selected disabled>Select project type</option>
+                                <option value="2bhk">2 BHK</option>
+                                <option value="3bhk">3 BHK</option>
+                                <option value="4bhk">4 BHK</option>
+                                <option value="villa">Villa</option>
+                            </select>
+                        </div>
+                        <div class="form-check form-switch qc-whatsapp-toggle mb-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="qc_whatsapp" name="whatsapp_updates" value="yes">
+                            <label class="form-check-label" for="qc_whatsapp">
+                                <i class="fab fa-whatsapp me-2"></i>Send me updates on WhatsApp
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100" id="qcSubmitBtn">
+                            <i class="fas fa-calendar-check me-2"></i>Send
+                        </button>
+                    </form>
+
+                    <div id="qcSuccess" class="text-center py-4 d-none">
+                        <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
+                        <h5>Thank you!</h5>
+                        <p class="text-muted mb-0" id="qcSuccessMessage">Our team will call you back shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap 5 JS - Deferred for faster page load -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>

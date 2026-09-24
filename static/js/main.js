@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all components
     initNavigation();
-    initPortfolioFilter();
     initSmoothScrolling();
     initAnimations();
     initFormValidation();
+    initQuickConsultationForm();
     initScrollToTop();
-    initParallax();
     initLazyVideoLoading();
+    initSyncedPortfolioCarousels();
 
     // Page loader function - optimized for speed
     function initPageLoader() {
@@ -105,17 +105,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Advance all portfolio preview carousels together on one shared timer, so they
+    // never drift apart even though each category has a different number of photos.
+    function initSyncedPortfolioCarousels() {
+        if (typeof bootstrap === 'undefined' || !bootstrap.Carousel) return;
+
+        const ids = ['livingRoomCarousel', 'kitchenCarousel', 'bedroomCarousel'];
+        const carousels = ids
+            .map(id => document.getElementById(id))
+            .filter(Boolean)
+            .map(el => bootstrap.Carousel.getOrCreateInstance(el, { interval: false, pause: false, ride: false }));
+
+        if (!carousels.length) return;
+
+        setInterval(() => {
+            carousels.forEach(carousel => carousel.next());
+        }, 4000);
+    }
+
     // Navbar scroll effect
     function initNavigation() {
         const navbar = document.querySelector('.navbar');
         if (!navbar) return;
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                navbar.style.background = 'rgba(255, 251, 246, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(97, 59, 39, 0.1)';
             } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+                navbar.style.background = 'rgba(255, 251, 246, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(97, 59, 39, 0.05)';
             }
         });
 
@@ -127,30 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (navbarCollapse && navbarCollapse.classList.contains('show')) {
                     new bootstrap.Collapse(navbarCollapse).hide();
                 }
-            });
-        });
-    }
-
-    // Portfolio filtering
-    function initPortfolioFilter() {
-        const filterButtons = document.querySelectorAll('.portfolio-filter button');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const filter = this.getAttribute('data-filter');
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                // Filter portfolio items
-                portfolioItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    if (filter === 'all' || category === filter) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
             });
         });
     }
@@ -189,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, observerOptions);
 
         // Observe elements for animations
-        const animatedElements = document.querySelectorAll('.service-card, .portfolio-card, .testimonial-card, .process-step');
+        const animatedElements = document.querySelectorAll('.service-card, .portfolio-category-card, .testimonial-card, .process-step');
         animatedElements.forEach(el => {
             el.classList.add('loading');
             observer.observe(el);
@@ -200,39 +194,103 @@ document.addEventListener('DOMContentLoaded', function() {
     function initFormValidation() {
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                // Add loading state to submit button
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
-                submitBtn.disabled = true;
-                setTimeout(() => {
-                    if (!this.checkValidity()) {
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                    }
-                }, 100);
-            });
+            // Real-time validation feedback: blank fields show no icon at all,
+            // filled fields show a green check only when actually valid, red otherwise.
+            function updateValidityClasses(input) {
+                input.classList.remove('is-invalid', 'is-valid');
+                if (!input.value.trim()) return;
+                input.classList.add(input.checkValidity() ? 'is-valid' : 'is-invalid');
+            }
 
-            // Add real-time validation feedback
             const inputs = contactForm.querySelectorAll('input, select, textarea');
             inputs.forEach(input => {
                 input.addEventListener('blur', function() {
-                    if (this.hasAttribute('required') && !this.value.trim()) {
-                        this.classList.add('is-invalid');
-                    } else {
-                        this.classList.remove('is-invalid');
-                        this.classList.add('is-valid');
-                    }
+                    updateValidityClasses(this);
                 });
                 input.addEventListener('input', function() {
-                    if (this.classList.contains('is-invalid') && this.value.trim()) {
-                        this.classList.remove('is-invalid');
-                        this.classList.add('is-valid');
+                    if (this.classList.contains('is-invalid') || this.classList.contains('is-valid')) {
+                        updateValidityClasses(this);
                     }
                 });
             });
         }
+    }
+
+    // Quick consultation popup form (AJAX submit, stays open until user closes it)
+    function initQuickConsultationForm() {
+        const modalEl = document.getElementById('quickConsultationModal');
+        const form = document.getElementById('quickConsultationForm');
+        if (!modalEl || !form) return;
+
+        const alertBox = document.getElementById('qcAlert');
+        const successBox = document.getElementById('qcSuccess');
+        const successMessage = document.getElementById('qcSuccessMessage');
+        const submitBtn = document.getElementById('qcSubmitBtn');
+
+        function showError(message) {
+            alertBox.textContent = message;
+            alertBox.classList.remove('d-none', 'alert-success');
+            alertBox.classList.add('alert-danger');
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alertBox.classList.add('d-none');
+            submitBtn.disabled = true;
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+
+            const formData = new FormData(form);
+            const wantsWhatsApp = formData.get('whatsapp_updates') === 'yes';
+            const leadName = formData.get('name');
+            const leadPhone = formData.get('phone');
+            const projectSelect = document.getElementById('qc_project_type');
+            const projectLabel = projectSelect.options[projectSelect.selectedIndex]?.text || 'a project';
+
+            // Open the WhatsApp tab synchronously (within the click gesture) so browsers don't block it;
+            // it gets redirected to the real wa.me link once the request succeeds, or closed if it fails.
+            const waWindow = wantsWhatsApp ? window.open('', '_blank') : null;
+
+            fetch(form.action || '/consultation', {
+                method: 'POST',
+                body: formData,
+                credentials: 'same-origin'
+            })
+                .then(response => response.json().then(data => ({ ok: response.ok, data })))
+                .then(({ ok, data }) => {
+                    if (ok && data.success) {
+                        form.classList.add('d-none');
+                        successMessage.textContent = data.message;
+                        successBox.classList.remove('d-none');
+
+                        // Send the lead's details to the business WhatsApp number so they can genuinely
+                        // start getting updates on WhatsApp once they hit send.
+                        if (waWindow) {
+                            const waMessage = `New consultation request\nName: ${leadName}\nPhone: ${leadPhone}\nProject type: ${projectLabel}\nWhatsApp updates: Yes\n\nThe customer booked a free consultation through the website.`;
+                            waWindow.location.href = `https://wa.me/918296274958?text=${encodeURIComponent(waMessage)}`;
+                        }
+                    } else {
+                        if (waWindow) waWindow.close();
+                        showError(data.message || 'Something went wrong. Please try again.');
+                    }
+                })
+                .catch(() => {
+                    if (waWindow) waWindow.close();
+                    showError('Network error. Please check your connection and try again.');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                });
+        });
+
+        // Reset the modal back to its initial state each time it's closed
+        modalEl.addEventListener('hidden.bs.modal', function() {
+            form.reset();
+            form.classList.remove('d-none');
+            successBox.classList.add('d-none');
+            alertBox.classList.add('d-none');
+        });
     }
 
     // Scroll to top functionality
@@ -285,18 +343,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         });
-    }
-
-    // Parallax effect for hero section
-    function initParallax() {
-        const heroImage = document.querySelector('.hero-image');
-        if (heroImage) {
-            window.addEventListener('scroll', function() {
-                const scrolled = window.scrollY;
-                const rate = scrolled * -0.5;
-                heroImage.style.transform = `translateY(${rate}px)`;
-            });
-        }
     }
 
     // Auto-dismiss flash messages

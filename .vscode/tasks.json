@@ -2,12 +2,22 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Run Dream Kraft Website - Production Mode",
+			"label": "Run Dream Kraft Website - Development (Live Reload)",
 			"type": "shell",
-			"command": "python app.py",
+			"command": ".\\venv\\Scripts\\python.exe app.py",
 			"group": "run",
 			"isBackground": true,
-			"problemMatcher": []
+			"problemMatcher": {
+				"owner": "flask",
+				"pattern": {
+					"regexp": ".*"
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "^.*$",
+					"endsPattern": "Debugger is active|Running on http://"
+				}
+			}
 		}
 	]
 }
