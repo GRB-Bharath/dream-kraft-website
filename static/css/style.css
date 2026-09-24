@@ -199,10 +199,10 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
-    max-width: 1320px;
-    margin: 0 auto;
-    padding-left: clamp(1rem, 4vw, 3rem);
-    padding-right: clamp(1rem, 4vw, 3rem);
+    max-width: none;
+    margin: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .navbar-brand {
@@ -246,7 +246,7 @@ footer .navbar-logo {
 
 .nav-link {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--text) !important;
     white-space: nowrap;
     padding: 0.25rem 0 !important;
@@ -292,7 +292,7 @@ footer .navbar-logo {
     }
 
     .nav-link {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
 
     .btn-consultation {
@@ -302,6 +302,11 @@ footer .navbar-logo {
 }
 
 @media (max-width: 991.98px) {
+    .navbar > .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     .navbar-collapse {
         background: var(--bg);
         border-radius: var(--border-radius-lg);
